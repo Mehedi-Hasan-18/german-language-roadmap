@@ -1,6 +1,7 @@
 import { Archivo, Work_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import NavBar from '@/components/NavBar';
+import { Analytics } from '@vercel/analytics/next';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <NavBar />
           <main className="pb-24 pt-6">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
