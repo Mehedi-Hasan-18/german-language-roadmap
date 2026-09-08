@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EDE9DE;
+  background-image:
+    linear-gradient(#D3CCB8 1px, transparent 1px),
+    linear-gradient(90deg, #D3CCB8 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  color: #211F1B;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus, everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #E14E1D;
+  outline-offset: 2px;
+}
+
+/* Panel edge notches — small tick marks at panel corners, a quiet nod to instrument casings */
+.panel-frame {
+  position: relative;
+  background-color: #F8F5EC;
+  border: 1px solid #D3CCB8;
+  border-radius: 3px;
+}
+.panel-frame::before,
+.panel-frame::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #B7AF97;
+  top: 6px;
+}
+.panel-frame::before { left: 6px; border-right: none; border-bottom: none; }
+.panel-frame::after { right: 6px; border-left: none; border-bottom: none; }
+
+.dial-track {
+  stroke: #D3CCB8;
+}
+
+.dial-fill {
+  stroke: #E14E1D;
+  stroke-linecap: butt;
+  transition: stroke-dashoffset 500ms ease;
+}
+
+/* Custom scrollbar, kept quiet */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE9DE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9C1A8;
+  border: 2px solid #EDE9DE;
+}
